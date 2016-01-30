@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="js/invoice1.js"></script>
+        <script src="services/finance.js"></script>
+
+	<body>
+
+		<div ng-app='invoice' ng-controller='InvoiceController as inv'>
+			<div>
+			<input type='number' min='0' ng-model='inv.qt1'>
+			</div>
+
+			<div>
+			<input type='number' ng-model='inv.qt2'>
+			</div>
+			<br>
+			<div>
+			<b>Total cost here: </b>{{inv.qt1*inv.qt2 |currency}}
+			<select ng-model='inv.inCurr'>
+			    <option ng-repeat='c in inv.currencies'>{{c}}</option>
+			</select>
+			<br>
+			<span ng-repeat="c in inv.currencies">
+				{{c}}: {{inv.total(c)}},
+			</span>
+			<button class='btn' ng-click='inv.pay()'>Pay</button>	
+			</div>
+
+				
+		</div>
+
+	</body>
+</html>
+
