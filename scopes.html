@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="js/scopes.js"></script>
+	<body>
+
+		<div ng-app="scopeExample" np-controller="MyController">
+	
+			<p>Input something in the input box:</p>
+			<p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
+			<h6>Hello {{name}}</h6>
+
+		</div>
+
+	</body>
+</html>
+
